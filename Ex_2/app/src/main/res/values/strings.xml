@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Calculadora de Área de Trapézio</string>
+    <string name="hint_base_maior">Base maior</string>
+    <string name="hint_base_menor">Base menor</string>
+    <string name="hint_altura">Altura</string>
+    <string name="button_calcular">Calcular Área</string>
+    <string name="resultado">Resultado: </string>
+    <string name="preencher_campos">Por favor, preencha todos os campos.</string>
+</resources>

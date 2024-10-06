@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Equação de 2º Grau</string>
+    <string name="hint_input_a">Digite o valor de a</string>
+    <string name="hint_input_b">Digite o valor de b</string>
+    <string name="hint_input_c">Digite o valor de c</string>
+    <string name="calculate_button">Calcular</string>
+    <string name="delta_label">Delta: </string>
+    <string name="x1_label">X1: </string>
+    <string name="x2_label">X2: </string>
+    <string name="error_not_quadratic">Não é uma equação de 2º grau.</string>
+    <string name="error_no_real_roots">Não há raízes reais.</string>
+    <string name="error_invalid_input">Por favor, insira valores válidos.</string>
+</resources>
