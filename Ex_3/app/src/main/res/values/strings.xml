@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Calcula Combustível</string>
+    <string name="hint_gasolina">Preço da Gasolina</string>
+    <string name="hint_etanol">Preço do Etanol</string>
+    <string name="button_calcular">Calcular</string>
+    <string name="msg_vazio">Por favor, insira os dois valores</string>
+    <string name="msg_Etanol">Etanol é mais vantajoso!!</string>
+    <string name="msg_Gasolina">Gasolina é mais vantajosa!!</string>
+</resources>
