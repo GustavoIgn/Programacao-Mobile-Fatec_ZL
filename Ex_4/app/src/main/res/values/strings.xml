@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Ex_4</string>
+    <string name="app_name">Calcula Autonomia</string>
+    <string name="hint_consumoMedio">Consumo Médio (km/l)</string>
+    <string name="hint_combRestante">litros de Combustível</string>
+    <string name="button_calcular">Calcular</string>
+    <string name="msg_vazio">Por favor, insira os dois valores</string>
+    <string name="resultado">Resultado: </string>
+    <string name="msg_autonomia">A autonomia do carro é de %d metros.</string>
 </resources>
