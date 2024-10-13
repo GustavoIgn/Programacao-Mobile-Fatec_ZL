@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Decompositor</string>
+    <string name="hint_input">Número de 100 a 999</string>
+    <string name="button_decompor">Decompor</string>
+    <string name="centena">Centena = </string>
+    <string name="unidade">Unidade = </string>
+    <string name="dezena">Dezena = </string>
+    <string name="erro_vazio">Por favor, insira um valor</string>
+    <string name="erro_range">Insira um número entre 100 e 999</string>
+</resources>
