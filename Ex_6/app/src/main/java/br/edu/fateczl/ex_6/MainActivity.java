@@ -1,5 +1,9 @@
 package br.edu.fateczl.ex_6;
 
+/*
+@author:<Gustavo da Silva Ignacio 1110482313006>
+ */
+
 import android.os.Bundle;
 
 import android.view.View;
