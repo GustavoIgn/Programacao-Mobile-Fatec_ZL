@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cálculo de Salário de Professores</string>
+    <string name="professor_titular">Professor Titular</string>
+    <string name="professor_horista">Professor Horista</string>
+    <string name="calcular">Calcular</string>
+    <string name="salario_titular">Salário do Professor Titular: R$ %1$s</string>
+    <string name="salario_horista">Salário do Professor Horista: R$ %1$s</string>
+    <string name="anos_experiencia_hint">Digite os anos de experiência</string>
+    <string name="horas_hint">Digite o número de horas trabalhadas</string>
+</resources>
