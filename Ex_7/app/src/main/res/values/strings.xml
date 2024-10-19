@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">RolaDados</string>
+    <string name="button_rolar">Rolar Dados</string>
+    <string name="label_resultado">Resultados:</string>
+
+    <string name="dado_d4">D4</string>
+    <string name="dado_d6">D6</string>
+    <string name="dado_d8">D8</string>
+    <string name="dado_d10">D10</string>
+    <string name="dado_d12">D12</string>
+    <string name="dado_d20">D20</string>
+    <string name="dado_d100">D100</string>
+
+    <string-array name="quant_dados">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>
