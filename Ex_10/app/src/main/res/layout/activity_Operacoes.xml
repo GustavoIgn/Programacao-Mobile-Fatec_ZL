@@ -1,0 +1,56 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OperacoesActivity">
+
+    <TextView
+        android:id="@+id/tvDadosConta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/dados_conta"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/etValorOperacao"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="@string/valor_operacao"
+        app:layout_constraintTop_toBottomOf="@id/tvDadosConta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/btnSacar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sacar"
+        app:layout_constraintTop_toBottomOf="@id/etValorOperacao"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btnDepositar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/depositar"
+        app:layout_constraintTop_toBottomOf="@id/etValorOperacao"
+        app:layout_constraintStart_toEndOf="@id/btnSacar"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btnCalcularRendimento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calcular_rendimento"
+        app:layout_constraintTop_toBottomOf="@id/btnDepositar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
