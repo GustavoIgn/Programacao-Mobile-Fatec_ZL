@@ -1,15 +1,14 @@
 <resources>
-    <string name="app_name">Banco GSI</string>
-    <string name="dados_conta">Dados da Conta</string>
-    <string name="valor_operacao">Valor da Operação</string>
-    <string name="sacar">Sacar</string>
-    <string name="depositar">Depositar</string>
-    <string name="calcular_rendimento">Calcular Rendimento</string>
-
-    <string name="nome_cliente">Nome do Cliente</string>
-    <string name="numero_conta">Número da Conta</string>
-    <string name="saldo_inicial">Saldo Inicial</string>
+    <string name="app_name">Sistema Bancário</string>
     <string name="conta_poupanca">Conta Poupança</string>
     <string name="conta_especial">Conta Especial</string>
-    <string name="cadastrar_conta">Cadastrar Conta</string>
+    <string name="hint_valor">Informe o valor</string>
+    <string name="bt_sacar">Sacar</string>
+    <string name="bt_depositar">Depositar</string>
+    <string name="saldo_insuficiente">Saldo insuficiente.</string>
+    <string name="excede_limite">Valor excede o limite da conta especial.</string>
+    <string name="novo_saldo">Novo saldo: %1$.2f</string>
+    <string name="bt_mostrar_dados">Mostrar Dados da Conta</string>
+    <string name="selecionar_conta">Selecione uma conta primeiro.</string>
+    <string name="valor_invalido">Por favor, insira um valor válido.</string>
 </resources>
