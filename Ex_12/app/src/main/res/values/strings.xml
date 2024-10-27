@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Localizador Origem CPF</string>
+    <string name="input_titulo">Seus Dados</string>
+
+    <string name="cpf_hint">Digite o CPF</string>
+    <string name="nome_hint">Digite o Nome</string>
+    <string name="btn_localizar">Localizar</string>
+
+    <string name="resultado_titulo">Localização de Origem</string>
+    <string name="resultado_label">Resultado</string>
+    <string name="btn_voltar">Voltar</string>
+    <string name="resultado_text">CPF: %1$s\nNome: %2$s</string>
+</resources>

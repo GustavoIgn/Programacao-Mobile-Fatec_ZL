@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Venda de Ingressos</string>
+    <string name="compra_titulo">Compra de Ingressos</string>
+    <string name="hint_codId">CPF</string>
+    <string name="txt_valor">Valor sem Taxa: R$ %1$.2f</string>
+    <string name="hint_taxa">Taxa Conveniencia</string>
+    <string name="ingresso_trad">Ingresso Tradicional</string>
+    <string name="ingresso_vip">Ingresso VIP</string>
+    <string name="hint_funcao">Qual a sua função?</string>
+
+    <string name="btn_comprar">Comprar</string>
+    <string name="txt_taxaConveniencia">Valor com Taxa: R$ %1$.2f</string>
+
+
+    <string name="resultado_titulo">Descritivo da Compra</string>
+    <string name="resultado_texto">Código: %1$s\nValor Final: R$ %2$.2f</string>
+    <string name="btn_voltar">Voltar</string>
+</resources>
