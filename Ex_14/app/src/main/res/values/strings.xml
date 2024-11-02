@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GeometriaApp</string>
+    <string name="base">Base</string>
+    <string name="altura">Altura</string>
+    <string name="raio">Raio</string>
+    <string name="calcular_area">Calcular Área</string>
+    <string name="calcular_perimetro">Calcular Perímetro</string>
+    <string name="resultado">Resultado</string>
+    <string name="menu_retangulo">Retângulo</string>
+    <string name="menu_circulo">Círculo</string>
+</resources>
