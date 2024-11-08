@@ -1,22 +1,23 @@
 package br.edu.fateczl.ex_15.model;
 
-import java.time.LocalDate;
-
 /*
 @author<Gustavo da Silva Ignacio 111082313006>
 */
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class Jogador {
+
+
     private int id;
     private String nome;
-    private LocalDate dataNasc;
-    private float peso;
+    private String dataNasc;
     private float altura;
+    private float peso;
     private Time time;
 
-    public Jogador() {
-    }
-    
+
     public int getId() {
         return id;
     }
@@ -33,12 +34,20 @@ public class Jogador {
         this.nome = nome;
     }
 
-    public LocalDate getDataNasc() {
+    public String getDtNasc() {
         return dataNasc;
     }
 
-    public void setDataNasc(LocalDate dataNasc) {
-        this.dataNasc = dataNasc;
+    public void setDtNasc(String dtNasc) {
+        this.dataNasc = dtNasc;
+    }
+
+    public void setAltura(float altura) {
+        this.altura = altura;
+    }
+
+    public float getAltura() {
+        return altura;
     }
 
     public float getPeso() {
@@ -47,14 +56,6 @@ public class Jogador {
 
     public void setPeso(float peso) {
         this.peso = peso;
-    }
-
-    public float getAltura() {
-        return altura;
-    }
-
-    public void setAltura(float altura) {
-        this.altura = altura;
     }
 
     public Time getTime() {
@@ -67,13 +68,9 @@ public class Jogador {
 
     @Override
     public String toString() {
-        return "Jogador{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", dataNasc=" + dataNasc +
-                ", peso=" + peso +
-                ", altura=" + altura +
-                ", time=" + time +
-                '}';
+        return id + " - " + nome + " - " + dataNasc + " - " + altura + " - " +
+                peso + " - " + (time != null ? time.getNome() : "Sem time");
     }
+
 }
+

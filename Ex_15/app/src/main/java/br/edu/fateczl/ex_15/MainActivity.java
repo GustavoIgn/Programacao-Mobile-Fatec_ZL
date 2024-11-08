@@ -1,7 +1,7 @@
 package br.edu.fateczl.ex_15;
 
 /*
-@author: <Gustavo da Silva Ignacio 1110482313006>
+@author<Gustavo da Silva Ignacio 111082313006>
 */
 
 import android.content.Intent;
@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -25,35 +26,66 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            carregaFragment(bundle);
+        } else {
+            FragmentManager FragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = FragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragment, new InicioFragment());
+            fragmentTransaction.commit();
+        }
+    }
+
+    private void carregaFragment(Bundle bundle) {
+        String tipo = bundle.getString("tipo");
+        if (tipo.equals("jogador")) {
+            fragment = new JogadorFragment();
+        } else {
+            fragment = new TimeFragment();
+        }
+        FragmentManager FragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = FragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment, fragment);
+        fragmentTransaction.commit();
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_jogador:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new JogadorFragment())
-                        .commit();
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        Bundle bundle = new Bundle();
+        Intent intent = new Intent(this, MainActivity.class);
+        {
+            if (id == R.id.item_jogador) {
+                bundle.putString("tipo", "jogador");
+                intent.putExtras(bundle);
+                this.startActivity(intent);
+                this.finish();
                 return true;
-            case R.id.menu_time:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new TimeFragment())
-                        .commit();
+            } else {
+                bundle.putString("tipo", "time");
+                intent.putExtras(bundle);
+                this.startActivity(intent);
+                this.finish();
                 return true;
-            default:
-                return super.onOptionsItemSelected(item);
+            }
         }
     }
 }
+
+

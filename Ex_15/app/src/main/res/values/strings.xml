@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">Atletismo</string>
+    <string name="app_name">Esportes CRUD</string>
+    <string name="jogador">Jogadores</string>
+    <string name="time">Times</string>
+    <string name="nome">Nome</string>
+    <string name="data">Data de Nascimento</string>
+    <string name="altura">Altura</string>
+    <string name="peso">Peso (Kg)</string>
+    <string name="codigo">Código</string>
+    <string name="id">ID Jogador</string>
+    <string name="inserir">Inserir</string>
+    <string name="alterar">Alterar</string>
+    <string name="excluir">Excluir</string>
+    <string name="buscar">Buscar</string>
+    <string name="listar">Listar</string>
+    <string name="cidade">Cidade</string>
+
+    <string name="inicio">App Esporte</string>
 </resources>

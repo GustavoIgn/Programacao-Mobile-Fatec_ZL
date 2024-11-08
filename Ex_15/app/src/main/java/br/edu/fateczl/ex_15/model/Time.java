@@ -10,6 +10,7 @@ public class Time {
     private String nome;
     private String cidade;
 
+
     public int getCodigo() {
         return codigo;
     }
@@ -36,10 +37,6 @@ public class Time {
 
     @Override
     public String toString() {
-        return "Time{" +
-                "codigo=" + codigo +
-                ", nome='" + nome + '\'' +
-                ", cidade='" + cidade + '\'' +
-                '}';
+        return codigo + " - " + nome + " " + cidade;
     }
 }
