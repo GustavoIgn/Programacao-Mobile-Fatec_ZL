@@ -39,12 +39,11 @@ public class JogadorController implements ICRUDDao<Jogador> {
 
     @Override
     public void delete(Jogador jogador) throws SQLException {
-        jDao.open();
-        try {
-            jDao.delete(jogador);
-        } finally {
-            jDao.close();
+        if (jDao.open() == null) {
+            jDao.open();
         }
+		jDao.delete(jogador);
+		jDao.close();
     }
 
     @Override

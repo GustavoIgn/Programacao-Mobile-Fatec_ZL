@@ -2,7 +2,7 @@ package br.edu.fateczl.ex_15;
 
 /*
 @author<Gustavo da Silva Ignacio 111082313006>
-*/
+ */
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -31,26 +31,32 @@ import br.edu.fateczl.ex_15.model.Time;
 import br.edu.fateczl.ex_15.persistence.JogadorDao;
 import br.edu.fateczl.ex_15.persistence.TimeDao;
 
-
 public class JogadorFragment extends Fragment {
 
     private View view;
-    private EditText etIDJogador, etNomeJogador, etDataNascJogador, etAlturaJogador, etPesoJogador;
+    private EditText etIDJogador,
+    etNomeJogador,
+    etDataNascJogador,
+    etAlturaJogador,
+    etPesoJogador;
     private Spinner spTimeJog;
-    private Button btnInserirJogador, btnAlterarJogador, btnExcluirJogador, btnListarJogador, btnBuscarJogador;
+    private Button btnInserirJogador,
+    btnAlterarJogador,
+    btnExcluirJogador,
+    btnListarJogador,
+    btnBuscarJogador;
     private TextView tvListarJogador;
     private JogadorController jCont;
     private TimeController tCont;
-    private List<Time> times;
+    private List < Time > times;
 
     public JogadorFragment() {
         super();
     }
 
-
-    @Override
+     @ Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+        Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_jogador, container, false);
         etIDJogador = view.findViewById(R.id.etIDJogador);
@@ -71,11 +77,11 @@ public class JogadorFragment extends Fragment {
         tCont = new TimeController(new TimeDao(view.getContext()));
         preencheSpinner();
 
-        btnInserirJogador.setOnClickListener(op -> acaoInserir());
-        btnAlterarJogador.setOnClickListener(op -> acaoModificar());
-        btnExcluirJogador.setOnClickListener(op -> acaoExcluir());
-        btnBuscarJogador.setOnClickListener(op -> acaoBuscar());
-        btnListarJogador.setOnClickListener(op -> acaoListar());
+        btnInserirJogador.setOnClickListener(op->acaoInserir());
+        btnAlterarJogador.setOnClickListener(op->acaoModificar());
+        btnExcluirJogador.setOnClickListener(op->acaoExcluir());
+        btnBuscarJogador.setOnClickListener(op->acaoBuscar());
+        btnListarJogador.setOnClickListener(op->acaoListar());
 
         return view;
     }
@@ -87,14 +93,14 @@ public class JogadorFragment extends Fragment {
             try {
                 jCont.insert(jogador);
                 Toast.makeText(view.getContext(), "Jogador Inserido com Sucesso!",
-                        Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_LONG).show();
             } catch (SQLException e) {
                 Toast.makeText(view.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
             }
             limpaCampos();
         } else {
             Toast.makeText(view.getContext(), "Selecione um Time",
-                    Toast.LENGTH_LONG).show();
+                Toast.LENGTH_LONG).show();
         }
 
     }
@@ -106,14 +112,14 @@ public class JogadorFragment extends Fragment {
             try {
                 jCont.modificar(jogador);
                 Toast.makeText(view.getContext(), "Jogador Atualizado com Sucesso!",
-                        Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_LONG).show();
             } catch (SQLException e) {
                 Toast.makeText(view.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
             }
             limpaCampos();
         } else {
             Toast.makeText(view.getContext(), "Selecione um Time",
-                    Toast.LENGTH_LONG).show();
+                Toast.LENGTH_LONG).show();
         }
     }
 
@@ -122,7 +128,7 @@ public class JogadorFragment extends Fragment {
         try {
             jCont.delete(jogador);
             Toast.makeText(view.getContext(), "Jogador Excluído com Sucesso!",
-                    Toast.LENGTH_LONG).show();
+                Toast.LENGTH_LONG).show();
         } catch (SQLException e) {
             Toast.makeText(view.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
         }
@@ -147,9 +153,9 @@ public class JogadorFragment extends Fragment {
 
     private void acaoListar() {
         try {
-            List<Jogador> jogadores = jCont.listar();
+            List < Jogador > jogadores = jCont.listar();
             StringBuffer buffer = new StringBuffer();
-            for (Jogador j : jogadores) {
+            for (Jogador j: jogadores) {
                 buffer.append(j.toString() + "\n");
             }
             tvListarJogador.setText(buffer.toString());
@@ -159,21 +165,32 @@ public class JogadorFragment extends Fragment {
     }
 
     private Jogador montajogador() {
-        Jogador j = new Jogador();
         try {
+            Jogador j = new Jogador();
             j.setId(Integer.parseInt(etIDJogador.getText().toString()));
             j.setNome(etNomeJogador.getText().toString());
+
             String dataNasc = etDataNascJogador.getText().toString();
             if (!dataNasc.isEmpty()) {
                 j.setDtNasc(dataNasc);
+            } else {
+                throw new IllegalArgumentException("Data de nascimento é obrigatória.");
             }
+
             j.setAltura(Float.parseFloat(etAlturaJogador.getText().toString()));
             j.setPeso(Float.parseFloat(etPesoJogador.getText().toString()));
-            j.setTime((Time) spTimeJog.getSelectedItem());
-        } catch (Exception e) {
-            Toast.makeText(view.getContext(), "Por favor, preencha todos os campos.", Toast.LENGTH_LONG).show();
+
+            int spPos = spTimeJog.getSelectedItemPosition();
+            if (spPos > 0) {
+                j.setTime(times.get(spPos));
+            } else {
+                throw new IllegalArgumentException("Selecione um time.");
+            }
+            return j;
+        } catch (NumberFormatException | IllegalArgumentException e) {
+            Toast.makeText(view.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+            return null;
         }
-        return j;
     }
 
     public void preencherCampos(Jogador j) {
@@ -184,7 +201,7 @@ public class JogadorFragment extends Fragment {
         etPesoJogador.setText(String.valueOf(j.getPeso()));
 
         int cont = 1;
-        for (Time t : times) {
+        for (Time t: times) {
             if (t.getCodigo() == j.getTime().getCodigo()) {
                 spTimeJog.setSelection(cont);
             } else {
@@ -206,6 +223,7 @@ public class JogadorFragment extends Fragment {
     }
 
     private void preencheSpinner() {
+
         Time t0 = new Time();
         t0.setCodigo(0);
         t0.setNome("Selecione um Time");
@@ -213,17 +231,18 @@ public class JogadorFragment extends Fragment {
 
         try {
             times = tCont.listar();
+            if (times == null) {
+                times = new ArrayList <  > ();
+            }
             times.add(0, t0);
 
-            ArrayAdapter ad = new ArrayAdapter<>(view.getContext(),
+            ArrayAdapter < Time > ad = new ArrayAdapter <  > (view.getContext(),
                     android.R.layout.simple_spinner_item,
                     times);
             ad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spTimeJog.setAdapter(ad);
-
         } catch (SQLException e) {
             Toast.makeText(view.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 }
-
