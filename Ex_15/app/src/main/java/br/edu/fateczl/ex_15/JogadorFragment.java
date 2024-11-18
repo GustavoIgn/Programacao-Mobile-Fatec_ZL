@@ -23,6 +23,7 @@ import android.widget.Toast;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.*;
 
 import br.edu.fateczl.ex_15.controller.JogadorController;
 import br.edu.fateczl.ex_15.controller.TimeController;
@@ -187,7 +188,7 @@ public class JogadorFragment extends Fragment {
                 throw new IllegalArgumentException("Selecione um time.");
             }
             return j;
-        } catch (NumberFormatException | IllegalArgumentException e) {
+        } catch (NumberFormatException e) {
             Toast.makeText(view.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
             return null;
         }
