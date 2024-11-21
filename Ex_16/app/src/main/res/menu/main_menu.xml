@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_livro"
+        android:title="Gerenciar Livros" />
+    <item
+        android:id="@+id/menu_revista"
+        android:title="Gerenciar Revistas" />
+    <item
+        android:id="@+id/menu_aluno"
+        android:title="Gerenciar Alunos" />
+    <item
+        android:id="@+id/menu_aluguel"
+        android:title="Gerenciar Aluguéis" />
+</menu>

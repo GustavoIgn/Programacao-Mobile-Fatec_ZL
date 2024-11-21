@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Aluguel de Exemplar</string>
+	<string name="tela_aluno">Informações Aluno</string>
+	<string name="ra">RA</string>
+	<string name="nome">Nome</string>
+	<string name="email">Email</string>
+	
+	<string name="salvar">Salvar</string>
+	<string name="listar">Listar</string>
+	<string name="apagar">Apagar</string>
+	<string name="editar">Editar</string>
+	<string name="buscar">Buscar</string>
+	
+	<string name="tela_aluguel">Informações Aluguel</string>
+	<string name="data_retirada">Data de Retirada</string>
+    <string name="data_devolucao">Data de Devolução</string>
+	
+</resources>
